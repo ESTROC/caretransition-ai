@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      MODEL_PATH: /app/artifacts/readmission_pipeline.joblib
+      METADATA_PATH: /app/artifacts/model_metadata.json
+    restart: unless-stopped
